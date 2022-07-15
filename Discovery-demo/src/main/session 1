@@ -1,0 +1,34 @@
+1. Building project with maven/gradle
+2. Required Dependencies
+3. Restful web services
+4. Lombok - ?
+
+Why Spring boot ??
+1. Avoid jar conflict.
+2. Mange the dependencies
+3. container management
+
+Spring Restful service
+1. Spring jar 2.5
+2. Jersy 1.76
+3. asm 1.
+4. fasterxml 2.5
+
+Restful web services annotations
+1. @RestContoller
+2. Get mapping, put mapping, post mapping, delete mapping - more Restful - Http Verbs
+3. @RequestMapping - old]
+4. @RequestBody
+5. @PathVariable
+
+Restful naming convention - URI
+
+Every restful service will return - response code
+
+CRUD - Students
+
+C-> Create - POST Mapping - /student - 201
+R -> Read -  Get mapping - All - /student - 200
+                            Single - /student/{studentId}
+U -> update - Put mapping - /student/{studentId} - 202
+D -> Delete - Delete mapping - /student/{studentId} - 200/204

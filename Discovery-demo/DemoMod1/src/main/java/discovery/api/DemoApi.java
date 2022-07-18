@@ -3,6 +3,10 @@ package discovery.api;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +21,7 @@ public class DemoApi {
 
     private List<Student> students = new ArrayList<>();
 
-    @Operation(description = "Test Api", summary = "/ping")
+    @Operation(description = "Test Api", summary = "/ping", tags = "/ping")
     @GetMapping("/ping")
     public String ping() {
         return "Hello World";
@@ -49,6 +53,20 @@ public class DemoApi {
         return new ResponseEntity<List<Student>>(HttpStatus.OK);
     }
 
+    @Operation(
+            summary = "Finds a student",
+            description = "Finds a person by their Id.",
+            tags = { "People" },
+            responses = {
+                    @ApiResponse(
+                            description = "Success",
+                            responseCode = "200",
+                            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Student.class))
+                    ),
+                    @ApiResponse(description = "Not found", responseCode = "404", content = @Content),
+                    @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
+            }
+    )
     @GetMapping("/student/{studentId}")
     public ResponseEntity<Student> getAStudent(@PathVariable("studentId") Integer id) {
 

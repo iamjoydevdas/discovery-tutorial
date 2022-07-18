@@ -9,11 +9,13 @@ summary - The summary (or title) of an endpoint.
 description - The description of the endpoint.
 tags - What tags to group the endpoint under. You don’t have to specify an array here if there is a single tag; writing tags = "People" also works.
 responses - An array of @ApiResponses that details what the endpoint can return, allowing you to show what happens on successful requests as well as unsuccessful or erroneous requests.
+
 @ApiResponse - Provides more information on what an endpoint returns. By filling in a number of its properties, users will better understand your API.
 
 description - The name or description of the endpoint.
 responseCode - The response code that is returned.
 content - Allows you to specify what media types can be returned along with an example of the response body by using @Schema. In the example above, it causes Swagger to display JSON representation of the Person class.
+
 @Parameter - Include more information about a request parameter.
 
 description - The description of the parameter.

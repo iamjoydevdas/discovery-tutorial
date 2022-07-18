@@ -1,13 +1,13 @@
 package discovery.api;
 
 
-/*import lombok.AllArgsConstructor;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data*/
+@Data
 public class Student  {
     private Integer id;
     private String name;

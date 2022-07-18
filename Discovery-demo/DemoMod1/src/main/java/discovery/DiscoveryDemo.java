@@ -1,4 +1,4 @@
-package com.cts.discovery;
+package discovery;
 
 
 import org.springframework.boot.SpringApplication;

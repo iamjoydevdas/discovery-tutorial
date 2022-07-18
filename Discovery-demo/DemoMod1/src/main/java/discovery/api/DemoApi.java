@@ -1,4 +1,4 @@
-package com.cts.discovery.api;
+package discovery.api;
 
 
 import org.springframework.http.HttpStatus;
@@ -41,7 +41,7 @@ public class DemoApi {
     @GetMapping("/student")
     public ResponseEntity<List<Student>> getAllStudents(@PathVariable("studentId") Integer id) {
 
-        return new ResponseEntity<Student>(HttpStatus.OK);
+        return new ResponseEntity<List<Student>>(HttpStatus.OK);
     }
 
     @GetMapping("/student/{studentId}")

@@ -1,4 +1,4 @@
-package com.cts.discovery.api;
+package discovery.api;
 
 
 import lombok.AllArgsConstructor;

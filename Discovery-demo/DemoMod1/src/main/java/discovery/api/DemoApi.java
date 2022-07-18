@@ -1,6 +1,9 @@
 package discovery.api;
 
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,11 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Tag(name = "Demo API", description = "Demo Api")
 @RestController
 public class DemoApi {
 
     private List<Student> students = new ArrayList<>();
 
+    @Operation(description = "Test Api", summary = "/ping")
     @GetMapping("/ping")
     public String ping() {
         return "Hello World";

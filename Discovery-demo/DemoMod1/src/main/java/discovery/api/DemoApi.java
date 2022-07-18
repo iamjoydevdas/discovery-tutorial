@@ -29,7 +29,7 @@ public class DemoApi {
 
     @PostMapping("/student")
     public ResponseEntity<Student> createStudent(@RequestBody Student student) {
-        student.setId(Integer.valueOf((int) Math.random()));
+      //  student.setId(Integer.valueOf((int) Math.random()));
         students.add(student);
         System.out.println(students);
         return new ResponseEntity<Student>(student, HttpStatus.CREATED);

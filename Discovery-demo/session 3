@@ -8,6 +8,10 @@ Swagger
 ---------------------------------
 Swagger is a tool for API documentation.
 
+types
+SpringFoxSwagger - Swagger 2
+OpenAPi Swagger - Swagger 3
+
 
 
 https://lankydan.dev/documenting-a-spring-rest-api-following-the-openapi-specification
@@ -18,18 +22,25 @@ Let’s start with the annotation on the class itself:
 Now onto the GET endpoint, below I have expanded on the two annotations with the most impact:
 
 @Operation - Adds details about what the endpoint does, including some properties to achieve this.
-
 summary - The summary (or title) of an endpoint.
 description - The description of the endpoint.
 tags - What tags to group the endpoint under. You don’t have to specify an array here if there is a single tag; writing tags = "People" also works.
 responses - An array of @ApiResponses that details what the endpoint can return, allowing you to show what happens on successful requests as well as unsuccessful or erroneous requests.
 
 @ApiResponse - Provides more information on what an endpoint returns. By filling in a number of its properties, users will better understand your API.
-
 description - The name or description of the endpoint.
 responseCode - The response code that is returned.
 content - Allows you to specify what media types can be returned along with an example of the response body by using @Schema. In the example above, it causes Swagger to display JSON representation of the Person class.
 
 @Parameter - Include more information about a request parameter.
-
 description - The description of the parameter.
+
+Spring Cloud
+------------------------------------------
+For microservice application management
+
+Eureka Service and Client
+-------------------------------------------
+Service registry and discovery
+
+

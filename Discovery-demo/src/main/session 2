@@ -5,3 +5,50 @@
 GIT - Code Repository with versioning
 
 Github, Bitbucket, gitlab
+
+git add . -> stage
+once staged - your files ready to push
+
+before pushing -> do Commit.
+
+commit - code is versionised in local repository. not pushed to global - git commit "story no - commmit messgae"
+
+push - git push  -  pushed to global repository
+
+Git Branch
+
+to create a branch -
+    from which branch I am going to create mine
+
+
+main - asfaq
+     - ratan
+     - arnab
+
+   Joydev
+main  - pull arnab - merged arnabs code 1st
+      - pull ratan - conflict - (merge the latest changes manually)
+      - asfaq pull
+
+hello.java - main()
+
+
+hello.java - arnab
+m1()
+
+hello.java - ratan
+m2()
+
+github desktop
+source tree
+git gui
+
+
+what is git merge vs git rebase
+I made some mistake on git push. How can I correct that
+I merged worng branch. how can I correct
+
+
+java - language of coding
+spring - framework to create a reliable software(3rd party jars/Dependencies)
+maven/ gradle - dependency management tool and project building

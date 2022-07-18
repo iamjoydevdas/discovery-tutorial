@@ -1,13 +1,13 @@
-package com.cts.discovery;
-
+package discover;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
+@EnableEurekaServer
 @SpringBootApplication
-public class DiscoveryDemo {
+public class EurekaModule {
     public static void main(String[] args) {
-        SpringApplication.run(DiscoveryDemo.class, args);
-        System.out.println("Hello World");
+        SpringApplication.run(EurekaModule.class, args);
     }
 }

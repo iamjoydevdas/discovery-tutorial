@@ -29,6 +29,6 @@ CRUD - Students
 
 C-> Create - POST Mapping - /student - 201
 R -> Read -  Get mapping - All - /student - 200
-                            Single - /student/{studentId}
+                            Single - /student/{studentId} -200
 U -> update - Put mapping - /student/{studentId} - 202
 D -> Delete - Delete mapping - /student/{studentId} - 200/204

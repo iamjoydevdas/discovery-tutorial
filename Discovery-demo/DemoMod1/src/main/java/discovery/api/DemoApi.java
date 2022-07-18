@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Tag(name = "Demo API", description = "Demo Api")
+@Tag(name = "Student CRUD operations", description = "This Controller will do some Student CRUD operations")
 @RestController
 public class DemoApi {
 
     private List<Student> students = new ArrayList<>();
 
-    @Operation(description = "Test Api", summary = "/ping", tags = "/ping")
+    @Operation(description = "This api will check if the application is running", summary = "/ping", tags = "/ping")
     @GetMapping("/ping")
     public String ping() {
         return "Hello World";

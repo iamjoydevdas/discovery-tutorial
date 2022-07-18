@@ -1,3 +1,17 @@
+1. Swagger
+2. Spring Cloud
+3. Eureka Server
+4. Eureka Client
+
+
+Swagger
+---------------------------------
+Swagger is a tool for API documentation.
+
+
+
+https://lankydan.dev/documenting-a-spring-rest-api-following-the-openapi-specification
+
 Let’s start with the annotation on the class itself:
 
 @Tag - Groups endpoints together, by their name. If no tag information is provided by a class and its methods, then a tag named after the class is used. You can also define a description of the tag to describe the overall functionality of a group of endpoints.

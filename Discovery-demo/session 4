@@ -1,4 +1,25 @@
 1. Router
 2. Property Handle
 3. Actuator
-4. AOP - Aspect oriented programming
+4. DB with JPA
+
+
+Router
+-----------------------------
+Service Gateway
+Netflix
+spring-cloud-starter-netflix-zuul
+@EnableZuulProxy -  enable the routing
+
+
+Property Handling
+-----------------------------
+How to read property from either *.properties/ *.yml
+@Value
+
+Actuator
+------------------------------
+Will provide additional feature to your module
+
+Connect Database with JPA/ Auto configuration
+-----------------------------------------------

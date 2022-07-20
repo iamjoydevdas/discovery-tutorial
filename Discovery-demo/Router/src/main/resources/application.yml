@@ -13,7 +13,7 @@ zuul:
     eager-load:
       enabled: true
   routes:
-    demo-module:
+    demo-module: #appilication name
       path: /demo/**
       service-id: demo-module
       retryable: true

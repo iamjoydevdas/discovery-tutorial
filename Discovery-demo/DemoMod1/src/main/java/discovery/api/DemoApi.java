@@ -1,6 +1,7 @@
 package discovery.api;
 
 
+import discovery.repo.StudentRepo;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -8,6 +9,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,20 +22,24 @@ import java.util.List;
 @RestController
 public class DemoApi {
 
+    @Value("${discovery.account.demo}")
+    private String course;
+
+    @Autowired
+    private StudentRepo studentRepo;
+
     private List<Student> students = new ArrayList<>();
 
     @Operation(description = "This api will check if the application is running", summary = "/ping", tags = "/ping")
     @GetMapping("/ping")
     public String ping() {
-        return "Hello World";
+        return "We are learning " + course;
     }
 
     @PostMapping("/student")
     public ResponseEntity<Student> createStudent(@RequestBody Student student) {
-      //  student.setId(Integer.valueOf((int) Math.random()));
-        students.add(student);
-        System.out.println(students);
-        return new ResponseEntity<Student>(student, HttpStatus.CREATED);
+        Student saveedStudent =  studentRepo.save(student);
+        return new ResponseEntity<Student>(saveedStudent, HttpStatus.CREATED);
     }
 
     @PutMapping("/student/{studentId}")
@@ -47,10 +54,10 @@ public class DemoApi {
         return new ResponseEntity<Student>(HttpStatus.NO_CONTENT);
     }
 
-    @GetMapping("/student")
-    public ResponseEntity<List<Student>> getAllStudents(@PathVariable("studentId") Integer id) {
-
-        return new ResponseEntity<List<Student>>(HttpStatus.OK);
+    @GetMapping("/students")
+    public ResponseEntity<List<Student>> getAllStudents() {
+        List<Student> students = (List<Student>) studentRepo.findAll();
+        return new ResponseEntity<List<Student>>(students, HttpStatus.OK);
     }
 
     @Operation(
@@ -69,7 +76,7 @@ public class DemoApi {
     )
     @GetMapping("/student/{studentId}")
     public ResponseEntity<Student> getAStudent(@PathVariable("studentId") Integer id) {
-
-        return new ResponseEntity<Student>(HttpStatus.OK);
+        Student foundStudent = studentRepo.findById(id).orElse(Student.builder().build());
+        return new ResponseEntity<Student>(foundStudent, HttpStatus.OK);
     }
 }

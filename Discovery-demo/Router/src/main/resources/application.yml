@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: routing-service
+
+server:
+  port: 1111
+
+zuul:
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+  ribbon:
+    eager-load:
+      enabled: true
+  routes:
+    demo-module:
+      path: /demo/**
+      service-id: demo-module
+      retryable: true

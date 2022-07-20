@@ -6,6 +6,7 @@
     <modules>
         <module>DemoMod1</module>
         <module>EurekaModule</module>
+        <module>Router</module>
     </modules>
 
     <parent>

@@ -2,6 +2,7 @@ package discovery.api;
 
 
 import discovery.repo.StudentRepo;
+import discovery.service.DemoApiCachingService;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -28,11 +29,18 @@ public class DemoApi {
     @Autowired
     private StudentRepo studentRepo;
 
+    @Autowired
+    private DemoApiCachingService demoApiCachingService;
+
     private List<Student> students = new ArrayList<>();
 
     @Operation(description = "This api will check if the application is running", summary = "/ping", tags = "/ping")
     @GetMapping("/ping")
     public String ping() {
+
+        String value = demoApiCachingService.getMessage();
+        System.out.println(value);
+
         return "We are learning " + course;
     }
 

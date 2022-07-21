@@ -38,3 +38,12 @@ Exception Handling
 try catch
 AOP (Self learn)
 Advice
+
+
+Spring Cache
+-----------------------------------------
+one get all - returns all students
+
+Hazelcast
+Ezcache
+Redis

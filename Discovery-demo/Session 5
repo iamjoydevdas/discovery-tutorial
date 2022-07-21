@@ -1,3 +1,40 @@
 1. Exception Handling
 2. Config Server
 3. Spring Cache
+
+
+External Config Server
+----------------------------------------
+1. Create a config server
+2. Create a client to fetch the config(property)
+
+1. create config server
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>
+
+       @EnableConfigServer
+
+storing/ providing the external properties
+1. git - spring.cloud.config.server.git.uri=git-url
+2. local directory - spring.cloud.config.server.git.uri=file:///e:/config
+3. CDN - spring.cloud.config.server.git.uri=cdn-url
+
+
+2. config client
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
+        spring.cloud.config.enabled=true
+        #spring.cloud.config.uri=http://localhost:8888
+        spring.config.import=optional:configserver:http://localhost:8888
+
+
+Exception Handling
+----------------------------------------
+try catch
+AOP (Self learn)
+Advice

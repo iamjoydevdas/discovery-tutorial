@@ -23,3 +23,19 @@ Will provide additional feature to your module
 
 Connect Database with JPA/ Auto configuration
 -----------------------------------------------
+@Entity
+@Table
+@Id
+
+
+
+a - 3
+
+some web page - 3
+
+1   2    3
+
+port
+8080 - x 3
+8081
+8082

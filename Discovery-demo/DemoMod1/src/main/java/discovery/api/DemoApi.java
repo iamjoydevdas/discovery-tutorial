@@ -36,6 +36,16 @@ public class DemoApi {
         return "We are learning " + course;
     }
 
+
+    @Operation(description = "This api will check if the application is running", summary = "/ping", tags = "/ping")
+    @GetMapping("/pings")
+    public String pings() throws Exception {
+        if(true){
+            throw new Exception();
+        }
+        return "We are learning " + course;
+    }
+
     @PostMapping("/student")
     public ResponseEntity<Student> createStudent(@RequestBody Student student) {
         Student saveedStudent =  studentRepo.save(student);

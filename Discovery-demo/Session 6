@@ -1,2 +1,55 @@
-1. JPA
-2. JWT authentication & Authorization
+1. Junit
+2.
+
+Testings
+-------------------------
+1. Unit Testing - Developer - Junit
+2. Intgration Testing - Developers - Junit
+3. Regression testing - Developers/Testers - Junit
+4. Manual Testing - Testers/ Developers
+5. Performance Testing - Testers
+6. Automation Testing - Testers
+7. Smoke Testing - Testers
+8. RestApi testing - testers/QA
+
+2+2 = 4
+
+Test Driven Development (TDD) practice -
+write down the test cases before writing the codes
+
+1. user will provide 2 input. find the division of the input.
+
+6 / 2 = 3
+
+7 / 3 = 2
+
+8 / 0 = exception
+
+@RunWith
+@Test
+Mockito -  When /Then
+Assert - AssertEquals
+
+
+Integration - Pending
+
+Regression - Application Behaviour
+
+Behaviour Driven Development (BDD)
+
+Gherkins -
+Feature: Guess the word
+
+  Scenario: Maker starts a game
+    When the Maker starts a game
+    Then the Maker waits for a Breaker to join
+
+  Scenario: Breaker joins a game
+    Given the Maker has started a game with the word "silky"
+    When the Breaker joins the Maker's game
+    Then the Breaker must guess a word with 5 characters
+
+
+
+
+

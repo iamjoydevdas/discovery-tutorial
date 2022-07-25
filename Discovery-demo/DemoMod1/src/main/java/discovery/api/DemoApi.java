@@ -23,7 +23,7 @@ import java.util.List;
 @RestController
 public class DemoApi {
 
-    @Value("${discovery.account.demo}")
+    @Value("${discovery.account.demo:Spring boot}")
     private String course;
 
     @Autowired
@@ -38,10 +38,10 @@ public class DemoApi {
     @GetMapping("/ping")
     public String ping() {
 
-        String value = demoApiCachingService.getMessage();
-        System.out.println(value);
+      /*  String value = demoApiCachingService.getMessage();
+        System.out.println(value);*/
 
-        return "We are learning " + course;
+        return "We are learning Spring Boot";
     }
 
 
@@ -92,6 +92,8 @@ public class DemoApi {
                     @ApiResponse(description = "Internal error", responseCode = "500", content = @Content)
             }
     )
+
+
     @GetMapping("/student/{studentId}")
     public ResponseEntity<Student> getAStudent(@PathVariable("studentId") Integer id) {
         Student foundStudent = studentRepo.findById(id).orElse(Student.builder().build());

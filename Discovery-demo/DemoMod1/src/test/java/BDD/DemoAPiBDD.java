@@ -1,5 +1,7 @@
 package BDD;
 
+import cucumber.api.CucumberOptions;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -7,20 +9,9 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
+@CucumberOptions(features = "src/test/resources",
+       // plugin = {"pretty", "html:target/cucumber/bagbasics"},
+        glue = "BDD.demo")
 public class DemoAPiBDD {
 
-    @Given("The application is running")
-    public void scenarion1() {
-
-    }
-
-    @When("The application is running")
-    public void scenarion2() {
-
-    }
-
-    @Then("The application is running")
-    public void scenarion3() {
-
-    }
 }

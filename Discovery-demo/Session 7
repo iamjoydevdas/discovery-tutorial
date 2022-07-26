@@ -1,3 +1,22 @@
 1. Cucumber
-2. Feign Client
-3. Hashicorp Vault
+2. Hashicorp Vault
+-----------------------------
+Setup vault process
+
+1. download ,unzip and update PATH variable with vault folder access
+2. create a file called vaultConfig.hcl and add the following entry
+storage "file" {
+	path= "./vault-data"
+}
+
+listener "tcp" {
+  address = "127.0.0.1:8200"
+  tls_disable =1
+}
+
+disable_mlock=true
+
+3. open a command prompt
+
+
+

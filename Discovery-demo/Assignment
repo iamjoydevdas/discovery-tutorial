@@ -1,0 +1,24 @@
+Movie Ticket Booking System
+-----------------------------------------
+
+Almost similer to book my show.
+
+Features
+---------------
+1. User can create their account and login
+2. User can be able to search movie(City wise, Threatre wise, show timewise)
+3. User can book a seat in particular show
+4. User can checkout and pay the booking fees
+5. User will be notified when the booking is confirmed
+6. User will get discount
+    a. on Friday afternoon shows
+    b. If user has booked 3 tickets, he will get 50% off on the 3rd ticket
+
+Apply all the knowledge from the sessions.
+
+Eureka
+Router
+User
+Threatre
+checkout
+discount

@@ -49,7 +49,20 @@ Feature: Guess the word
     When the Breaker joins the Maker's game
     Then the Breaker must guess a word with 5 characters
 
+BDD - The play of 3 AMIGOS - ( Businness Manager/Client, Developer, Tester)
 
+Feature:
+    Scenario: User registration
+        Given: User input
+        When: user hit POST /user api
+        Then: User will expect 201
+        And: User id is 1
 
-
+    Scenario: User details
+        Given: User input is userId 1
+        When: user hit GET /user/{userId} api
+        Then: User will expect 200
+        And: User details is
+            | UserId | Name | address | sex |
+            |  1     | JD   | Kol     | M   |
 

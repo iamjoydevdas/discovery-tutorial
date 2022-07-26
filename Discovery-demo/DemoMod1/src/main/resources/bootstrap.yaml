@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: demo-module
+  cloud:
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+      token: hvs.i2DpJrxyo43eQncis77J7vZ4
+      generic:
+        default-context: demo

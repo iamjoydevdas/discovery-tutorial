@@ -16,7 +16,45 @@ listener "tcp" {
 
 disable_mlock=true
 
-3. open a command prompt
+3. open a command prompt run below to start vault server
+    vault server -config ./vaultconfig.hcl
+4. Open another CMD
+5. set VAULT_ADDR=http://localhost:8200 - vault port binding
+6. vault operator init
+----------------------------------------------------------------
+Unseal Key 1: /lbq4a8k9Wt2uJwofQW7Xz7L8DX80bzm0uLAJL79N+U8
+Unseal Key 2: uzu56PZ6e1aDZls15vXShi/X+plzbLLFCnVARdQ7oEHX
+Unseal Key 3: bVAPhUj/8OrgTaHcpfErROEBXSZlW5S1MJSuKHIijZU5
+Unseal Key 4: QzmYE6yfuhkztbbNrNsGx4cURmZa4wiwFzw0DYmZADok
+Unseal Key 5: fI5SF+emfzh7x1U+1e93LhNURykhP5rYyXhAsu6xdU3n
 
+Initial Root Token: hvs.OJfQ99zuAKs59mTQsAJJQJbG
 
+Vault initialized with 5 key shares and a key threshold of 3. Please securely
+distribute the key shares printed above. When the Vault is re-sealed,
+restarted, or stopped, you must supply at least 3 of these keys to unseal it
+before it can start servicing requests.
 
+Vault does not store the generated root key. Without at least 3 keys to
+reconstruct the root key, Vault will remain permanently sealed!
+
+It is possible to generate new unseal keys, provided you have a quorum of
+existing unseal keys shares. See "vault operator rekey" for more information.
+------------------------------------------------------------------------------
+
+7. set VAULT_TOKEN=hvs.OJfQ99zuAKs59mTQsAJJQJbG
+8. vault status -  we will see the vault is sealed
+9. unseal vault
+vault operator unseal /lbq4a8k9Wt2uJwofQW7Xz7L8DX80bzm0uLAJL79N+U8
+vault operator unseal uzu56PZ6e1aDZls15vXShi/X+plzbLLFCnVARdQ7oEHX
+vault operator unseal bVAPhUj/8OrgTaHcpfErROEBXSZlW5S1MJSuKHIijZU5
+
+Vault is unsealed
+10. now mention place where you want to keep the secrets
+vault secrets enable -path=secret/ kv
+
+11. keep ur credentials
+vault kv put secret/demo username=root password=admin
+
+12. to check the vault entries
+vault kv get secret/demo

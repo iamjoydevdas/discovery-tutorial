@@ -6,6 +6,6 @@ spring:
       host: localhost
       port: 8200
       scheme: http
-      token: hvs.i2DpJrxyo43eQncis77J7vZ4
+      token: hvs.OJfQ99zuAKs59mTQsAJJQJbG
       generic:
         default-context: demo

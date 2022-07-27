@@ -1,3 +1,42 @@
 1. Feign Client
 2. Fallbacks
 3. Rest Api validations
+
+1. Feign client
+---------------------------
+
+producer - /product
+
+consumer -
+
+RestTemplate = host + uri + method + protocol
+
+FeignClient -
+Both producer and consumer need to be registered under EurekaServer
+in producer - (DemoMod1)
+            - create the /product rest api
+in consumer - (NewMod)
+            - add dependency -openFeign
+            - add @Feign interface
+
+2. Fallback - What if the producer is down?
+       consumer will fail
+       Hixtrix support
+
+       you need to write some fallback methods.
+       1. feign:
+            hystrix:
+              enabled: true
+
+       2. write a fallback class
+
+3. Rest Api validations
+when you are sending some POJO via request body
+student pojo
+name = " "
+
+@NotNull
+@NotBlank
+@Regex
+
+@Valid

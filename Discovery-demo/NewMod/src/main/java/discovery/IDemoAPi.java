@@ -11,5 +11,5 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface IDemoAPi {
 
     @RequestMapping(value="/ping", method = RequestMethod.GET, consumes= MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> ping();
+    ResponseEntity<String> ping();
 }

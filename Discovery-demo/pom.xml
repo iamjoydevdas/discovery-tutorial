@@ -8,6 +8,7 @@
         <module>EurekaModule</module>
         <module>Router</module>
         <module>config-server</module>
+        <module>NewMod</module>
     </modules>
 
     <parent>

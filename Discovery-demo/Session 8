@@ -1,3 +1,3 @@
-1. Nexus Repository
-2. JWT
-3. SonarQube
+1. Feign Client
+2. Fallbacks
+3. Rest Api validations

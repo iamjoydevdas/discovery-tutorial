@@ -9,6 +9,7 @@
         <module>Router</module>
         <module>config-server</module>
         <module>NewMod</module>
+        <module>JWTDemo</module>
     </modules>
 
     <parent>

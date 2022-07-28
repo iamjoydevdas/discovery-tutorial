@@ -18,8 +18,9 @@ public class JWTMain {
 
     @PostConstruct
     public void initUsers() {
+        repository.deleteAll();
         List<User> users = Stream.of(
-                new User(101, "joydev", "password", "javatechie@gmail.com"),
+                new User(101, "joydev", "password", "joydev@gmail.com"),
                 new User(102, "user1", "pwd1", "user1@gmail.com"),
                 new User(103, "user2", "pwd2", "user2@gmail.com"),
                 new User(104, "user3", "pwd3", "user3@gmail.com")

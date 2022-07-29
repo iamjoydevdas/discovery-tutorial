@@ -20,7 +20,7 @@
 
     <groupId>com.cts.discovery</groupId>
     <artifactId>demo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>Discovery Tutorial</name>
     <description>Demo project for Spring Boot</description>
     <packaging>pom</packaging>
@@ -69,6 +69,16 @@
             </plugins>
         </pluginManagement>
     </build>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexusdeploymentrepo</id>
+            <url>http://localhost:8081/repository/discovery-snapshot/</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexusdeploymentrepo</id>
+            <url>http://localhost:8081/repository/rel/</url>
+        </repository>
 
+    </distributionManagement>
 
 </project>

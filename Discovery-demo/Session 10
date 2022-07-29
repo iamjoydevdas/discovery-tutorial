@@ -1,2 +1,27 @@
 1. Nexus Repository
 2. SonarQube
+
+
+SonarQube
+----------------------
+Static code checksum analyser
+
+
+Nexus Repository
+----------------------
+jar repository to maintain the release jars
+
+private repository -
+config-server 1
+demo1 1 - 2
+Eureka 1
+
+snapshot - developer jar followed by -SNAPSHOT
+release - the jar to be used for production
+
+1. download nexus and go to nexus bin
+2. modify vmoptions
+3. run "nexus /run"
+4. maintain Server in settings.xml
+5. update root pom.xml
+6. run "maven clean deploy"

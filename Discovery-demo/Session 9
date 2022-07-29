@@ -1,2 +1,6 @@
 1. JWT
 2. Spring Security
+
+Authentication - 401
+Authorization - 403
+
